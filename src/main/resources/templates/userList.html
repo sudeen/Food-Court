@@ -30,8 +30,11 @@
                     <input hidden="hidden" name="id" th:value="${user.id}"/>
                     <input th:id="'selected'+${user.id}" class="checkboxUser" type="checkbox"/>
                 </td>
-                <td><a th:href="@{/userinfo(id=${user.id})}">
-                    <span th:text="${user.firstName}"></span></a></td>
+                <td>
+                    <a
+                            th:text="${user.firstName}" data-toggle="modal" data-target="#myModal">
+                    </a>
+                </td>
                 <td th:text="${user.middleName}"></td>
                 <td th:text="${user.lastName}"></td>
                 <td th:text="${user.email}"></td>
@@ -51,6 +54,32 @@
         </table>
     </div>
     <button th:id="deleteSelected" class="btn btn-danger">Delete Selected</button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content" data-th-each="user : ${userList}">
+                <div class="modal-header" >
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title"><span th:text="${user.firstName}"></span>
+                        <span th:text="${user.lastName}"></span></h4>
+                </div>
+                <div class="modal-body">
+                    <h5>Email: <span th:text="${user.email}"></span></h5>
+                    <h5>Organization: <span th:text="${user.organization}"></span></h5>
+                    <h5>Designation: <span th:text="${user.designation}"></span></h5>
+                    <h5>Number: <span th:text="${user.number}"></span></h5>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
 </div>
 
 <div th:replace="common/header :: common-footer"/>
