@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<!--<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">-->
+<head th:fragment="common-header">
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>International Dental Congress-Nepal</title>
+
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />-->
+
+
+    <!-- Bootstrap core CSS -->
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet"/>
+
+    <!-- Custom styles for this template -->
+    <link th:href="@{/css/style.css}" rel="stylesheet"/>
+
+    <link rel="icon" href="#"/>
+
+    <!--<script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>-->
+    <!--<script>tinymce.init({ selector:'textarea' });</script>-->
+
+    <script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=wdartupm1s7vgujdpodqsy71fa0qvl0mlp33h2der8o5lyz1"></script>
+    <script>
+        tinymce.init({
+            selector: 'textarea',
+            height: 500,
+            theme: 'modern',
+            plugins: 'lists advlist image imagetools'
+        });
+    </script>
+
+    <!--Data table content-->
+    <link th:href="@{/css/jquery.dataTables.min.css}" rel="stylesheet"/>
+    <link th:href="@{/css/dataTables.bootstrap.min.css}" rel="stylesheet"/>
+
+    <link th:href="@{/css/font-awesome.min.css}" rel="stylesheet" />
+
+</head>
+
+<body>
+<div th:fragment="navbar">
+    <nav class="navbar navbar-inverse bg-inverse navbar-static-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#navbar" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" th:href="@{/}">User List</a>
+                <a class="navbar-brand" th:href="@{/}">Add New User</a>
+                <a class="navbar-brand" th:href="@{/userList}">View User</a>
+            </div>
+
+
+            <!--<div id="navbar" class="navbar-collapse collapse">-->
+                <!--<ul class="nav navbar-nav navbar-left">-->
+                    <!--<li class="dropdown">-->
+                        <!--<a href="#" class="dropdown-toggle"-->
+                           <!--data-toggle="dropdown" role="button" aria-haspopup="true"-->
+                           <!--aria-expanded="false">Users<span class="caret"></span></a>-->
+                        <!--<ul class="dropdown-menu">-->
+                            <!--<li><a th:href="@{/}">Add a new User</a></li>-->
+                            <!--<li><a th:href="@{/userList}">View User list</a></li>-->
+                        <!--</ul>-->
+                    <!--</li>-->
+                <!--</ul>-->
+                <!--<ul class="nav navbar-nav navbar-right">-->
+                    <!--<li><a th:href="@{/}">Sign out</a></li>-->
+                <!--</ul>-->
+            <!--</div>&lt;!&ndash;/.nav-collapse &ndash;&gt;-->
+
+
+
+
+        </div><!-- /.container-fluid -->
+    </nav>
+</div>
+
+<div th:fragment="body-bottom-scripts">
+    <script th:src="@{/js/jquery.min.js}"></script>
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+    <script th:src="@{/js/bootbox.min.js}"></script>
+
+    <script th:src="@{/js/scripts.js}"></script>
+
+    <!--Data Table script-->
+    <script th:src="@{/js/jquery.dataTables.min.js}"></script>
+    <script th:src="@{/js/dataTables.bootstrap.min.js}"></script>
+</div>
+
+<div th:fragment="common-footer">
+    <div style="text-align:center;font-size: 16px;"><strong>All Rights Are Reserved &copy; 2017 Sudin Ranjitkar</strong>
+    </div>
+</div>
+
+</body>
+</html>

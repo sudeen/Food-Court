@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!--<html lang="en" xmlns:th="http://www.w3.org/1000/xhtml">-->
+
+<head th:replace="common/header :: common-header"/>
+
+<body>
+<div th:replace="common/header :: navbar"/>
+
+
+<div class="container">
+    <div class="row">
+        <form class="form-horizontal" th:action="@{/addUser}" method="post">
+            <fieldset>
+                <legend class="center-block">New User Information
+                    <span style="font-size: small"> * is a required field</span>
+                </legend>
+
+
+                <!-- First Name -->
+                <div class="form-group">
+                    <label class="col-md-2 control-label" for="firstName">* First Name</label>
+
+                    <div class="col-md-8">
+                        <input type="text" name="firstName" class="form-control" id="firstName"
+                               required="required" placeholder="FirstName"/>
+                        <span class="help-block">First Name</span>
+                    </div>
+                </div>
+
+                <!-- MiddleName -->
+                <div class="form-group">
+                    <label class="col-md-2 control-label" for="middleName">Middle Name</label>
+                    <div class="col-md-8">
+                        <input type="text" name="middleName" class="form-control" id="middleName"
+
+                               placeholder="Middle Name"/> <span class="help-block">Middle Name</span>
+                    </div>
+                </div>
+
+                <!-- LastName -->
+                <div class="form-group">
+                    <label class="col-md-2 control-label" for="lastName">* Last Name</label>
+                    <div class="col-md-8">
+                        <input type="text" name="lastName" class="form-control"
+                               id="lastName"
+                               placeholder="Last Name"/> <span class="help-block">Last Name</span>
+                    </div>
+                </div>
+
+                <!-- Email -->
+                <div class="form-group">
+                    <label class="col-md-2 control-label" for="email">Email</label>
+                    <div class="col-md-8">
+                        <input type="email" class="form-control" id="email"
+                               name="email"
+                               placeholder="Email"/> <span class="help-block">Email</span>
+                    </div>
+                </div>
+
+
+                <!-- Organization -->
+                <div class="form-group">
+                    <label class="col-md-2 control-label" for="organization">Organization</label>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" id="organization"
+                               name="organization"
+                               placeholder="Organization"/> <span class="help-block">Organization</span>
+                    </div>
+                </div>
+
+                <!-- Designation -->
+                <div class="form-group">
+                    <label class="col-md-2 control-label" for="designation">* Designation</label>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" id="designation"
+                               name="designation"
+                               placeholder="Designation"/> <span class="help-block">Designation</span>
+                    </div>
+                </div>
+
+                <!-- Number -->
+                <div class="form-group">
+                    <label class="col-md-2 control-label" for="number">Number</label>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" id="number"
+                               name="number"
+                               placeholder="Contact Number"/> <span class="help-block">Contact Number</span>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8">
+                        <button type="submit" class="btn btn-success">Add User</button>
+                        <a class="btn btn-danger" th:href="@{/userList}">Cancel</a>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
+
+
+<div th:replace="common/header :: common-footer"/>
+<div th:replace="common/header :: body-bottom-scripts"/>
+</body>
+</html>
