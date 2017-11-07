@@ -48,6 +48,10 @@
                             type="submit" value="delete">
                         <span class="fa fa-times">Delete</span>
                     </button>
+                    <button th:id="'oneUser-'+${user.id}"
+                            class="btn btn-primary btn-xs" type="submit" value="generateBarcode">
+                        <span class="fa fa-barcode"> Generate Barcode</span>
+                    </button>
                 </td>
             </tr>
             </tbody>
@@ -61,7 +65,7 @@
 
             <!-- Modal content-->
             <div class="modal-content" data-th-each="user : ${userList}">
-                <div class="modal-header" >
+                <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <h4 class="modal-title"><span th:text="${user.firstName}"></span>
                         <span th:text="${user.lastName}"></span></h4>
