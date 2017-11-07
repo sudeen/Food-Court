@@ -38,11 +38,11 @@
     <link th:href="@{/css/jquery.dataTables.min.css}" rel="stylesheet"/>
     <link th:href="@{/css/dataTables.bootstrap.min.css}" rel="stylesheet"/>
 
-    <link th:href="@{/css/font-awesome.min.css}" rel="stylesheet" />
+    <link th:href="@{/css/font-awesome.min.css}" rel="stylesheet"/>
 
-    <script  th:src="@{/js/jquery-2.2.3.min.js}"></script>
+    <script th:src="@{/js/jquery-2.2.3.min.js}"></script>
     <script type="text/javascript" th:src="@{/js/jquery-barcode.js}"></script>
-    <script  th:src="@{/js/jQuery.print.js}"></script>
+    <script th:src="@{/js/jQuery.print.js}"></script>
 
 
 </head>
@@ -75,7 +75,7 @@
                 </td>
                 <td>
                     <a
-                            th:text="${user.firstName}" >
+                            th:text="${user.firstName}">
                     </a>
                 </td>
                 <td th:text="${user.middleName}"></td>
@@ -96,33 +96,39 @@
                     <!--<span class="fa fa-barcode"> Generate Barcode</span>-->
                     <!--</a>-->
                     <a class="btn btn-success btn-xs" th:href="@{/updateUser?id=}+${user.id}"><span class="fa fa-edit">Edit</span></a>
-
-                    <a th:href="'#'+${status.index}"  class="btn btn-primary btn-xs" data-toggle="modal"  data-whatever="@mdo">Generates Barcode</a>
+                    <br/>
+                    <a th:href="'#'+${status.index}" class="btn btn-primary btn-xs" data-toggle="modal"
+                       data-whatever="@mdo">Generates Barcode</a>
                 </td>
-
-                <div class="modal fade" th:id="${status.index}" tabindex="-1" role="dialog" aria-labelledby="attandantparticipantModalTitle" aria-hidden="true">
+                <!--<div class="coupon">-->
+                <div class="modal fade" th:id="${status.index}" tabindex="-1" role="dialog"
+                     aria-labelledby="attandantparticipantModalTitle" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h2 class="modal-title" id="attandantparticipantModalTitle">Generate Barcode</h2>
 
                             </div>
-                            <center><input th:id="'txtbarcode'+${status.index}" type="text" th:value="${user.id}"/></center>
-                            <div class="modal-body" th:id="'barcodeprint'+${status.index}" style="margin-left:65px; margin-top:-8px" >
+                            <center><input th:id="'txtbarcode'+${status.index}" type="text" th:value="${user.id}"/>
+                            </center>
+                            <div class="modal-body" th:id="'barcodeprint'+${status.index}"
+                                 style="margin-left:65px; margin-top:-8px">
                                 <h5>Email: <span th:text="${user.email}"></span></h5>
                                 <h5>Organization: <span th:text="${user.organization}"></span></h5>
                                 <h5>Designation: <span th:text="${user.designation}"></span></h5>
                                 <h5>Number: <span th:text="${user.number}"></span></h5>
-                                <div th:id="'barcodes'+${status.index}" ></div>
+                                <div th:id="'barcodes'+${status.index}"></div>
 
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                                <a class="btn btn-info"  data-dismiss="modal" th:id="'print'+${status.index}" href="#" th:onclick="'printValue('+${status.index}+');'" >Generate Barcode</a>
+                                <a class="btn btn-info" data-dismiss="modal" th:id="'print'+${status.index}"
+                                   href="#" th:onclick="'printValue('+${status.index}+');'">Generate Barcode</a>
                             </div>
                         </div>
                     </div>
                 </div>
+                <!--</div>-->
 
             </tr>
             </tbody>
@@ -149,17 +155,17 @@
 <script>
     $(document).ready(function () {
         $("#userListTable").DataTable({
-            "lengthMenu": [[5, 10, 15, 20, -1], [5, 10, 15, 20, "All"]],
-            "ordering": false,
+            "lengthMenu": [[10, 15, 20, -1], [10, 15, 20, "All"]],
+            "ordering": true,
             stateSave: true
         });
     });
 </script>
-<script >
-    function printValue(x){
-        console.log("asd"+x)
-        $("#barcodes"+x).barcode($("#txtbarcode"+x).val(),"code128");
-        $.print("#barcodeprint"+x);
+<script>
+    function printValue(x) {
+        console.log("asd" + x)
+        $("#barcodes" + x).barcode($("#txtbarcode" + x).val(), "code128");
+        $.print("#barcodeprint" + x);
     }
 </script>
 </body>
