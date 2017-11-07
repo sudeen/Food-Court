@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
@@ -42,6 +43,19 @@ public class UserController {
         userService.removeOne(Long.parseLong(id.substring(8)));
         List<Users> userList=userService.findAllUsers();
         model.addAttribute("userList",userList);
+        return "redirect:userList";
+    }
+
+    @RequestMapping("/updateUser")
+    public String updateUser(@RequestParam("id") Long id, Model model) {
+        Users user = userService.findOne(id);
+        model.addAttribute("user",user);
+        return "updateUser";
+    }
+
+    @RequestMapping(value = "/updateUser",method = RequestMethod.POST)
+    public String updateUserPost(@ModelAttribute("user") Users users,HttpServletRequest httpServletRequest){
+        userService.save(users);
         return "redirect:userList";
     }
 
