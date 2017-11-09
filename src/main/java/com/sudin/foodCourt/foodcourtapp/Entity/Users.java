@@ -47,6 +47,15 @@ public class Users {
     @Column(name = "modified_date")
     private Date modifiedDate;
 
+    @OneToOne(mappedBy = "users", cascade = CascadeType.ALL)
+    private Dinner dinner;
+
+    @OneToOne(mappedBy = "users", cascade = CascadeType.ALL)
+    private Entry entry;
+
+    @OneToOne(mappedBy = "users", cascade = CascadeType.ALL)
+    private Lunch lunch;
+
     public Users() {
     }
 
