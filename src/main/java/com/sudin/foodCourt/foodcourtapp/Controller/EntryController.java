@@ -50,7 +50,7 @@ public class EntryController {
                 success = "Entry of " +user.getFirstName()+ " " +user.getLastName()+" successful";
                 redirectAttributes.addFlashAttribute("success", success);
             } else {
-                error = "Entry already done";
+                error = "Entry of " +user.getFirstName()+ " " +user.getLastName()+" already done";
                 redirectAttributes.addFlashAttribute("error", error);
             }
         } else {
@@ -81,14 +81,14 @@ public class EntryController {
                 if (entry != null) {
                     Lunch lunch = new Lunch(user);
                     lunchRepository.save(lunch);
-                    success = "Lunch completed successfully";
+                    success = "Lunch of " +user.getFirstName()+ " " +user.getLastName()+" successful";
                     redirectAttributes.addFlashAttribute("success", success);
                 } else {
                     System.out.println("entry not completed");
-                    redirectAttributes.addFlashAttribute("error", "Entry not done yet");
+                    redirectAttributes.addFlashAttribute("error", "Entry of " +user.getFirstName()+ " " +user.getLastName()+ " not done yet");
                 }
             } else {
-                error = "Lunch already done";
+                error = user.getFirstName()+ " " +user.getLastName()+ "has already taken Lunch";
                 redirectAttributes.addFlashAttribute("error", error);
             }
         } else {
@@ -118,13 +118,13 @@ public class EntryController {
                 if (entry != null) {
                     Dinner dinner = new Dinner(user);
                     dinnerRepository.save(dinner);
-                    success = "Dinner taken successfully";
+                    success = "Dinner of " +user.getFirstName()+ " " +user.getLastName()+" successful";
                     redirectAttributes.addFlashAttribute("success", success);
                 } else {
-                    redirectAttributes.addFlashAttribute("error", "Entry not done yet");
+                    redirectAttributes.addFlashAttribute("error", "Entry of " +user.getFirstName()+ " " +user.getLastName()+ " not done yet");
                 }
             } else {
-                error = "Dinner already done";
+                error = user.getFirstName()+ " " +user.getLastName()+ " has already taken Dinner";
                 redirectAttributes.addFlashAttribute("error", error);
             }
         } else {

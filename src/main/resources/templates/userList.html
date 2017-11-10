@@ -46,8 +46,9 @@
 
     <style>
         @media print {
-            #emaill {
-                color: lightgreen !important;
+            #designation{
+                color:orangered !important;
+
             }
         }
 
@@ -55,8 +56,15 @@
 
         }
 
-        #details {
+        #spanTest {
+            font-size: 31px;
+            text-align: center;
+            vertical-align: middle;
+            line-height: 23px;
+        }
 
+        #details {
+            color: black;
         }
     </style>
 </head>
@@ -74,10 +82,7 @@
                 <th>First Name</th>
                 <th>Middle Name</th>
                 <th>Last Name</th>
-                <th>Email</th>
-                <th>Organization</th>
                 <th>Designation</th>
-                <th>Number</th>
                 <th>Operation</th>
             </tr>
             </thead>
@@ -94,10 +99,7 @@
                 </td>
                 <td th:text="${user.middleName}"></td>
                 <td th:text="${user.lastName}"></td>
-                <td th:text="${user.email}"></td>
-                <td th:text="${user.organization}"></td>
                 <td th:text="${user.designation}"></td>
-                <td th:text="${user.number}"></td>
                 <td>
                     <input hidden="hidden" name="id" th:value="${user.id}"/>
                     <button th:id="'oneUser-'+${user.id}"
@@ -124,22 +126,36 @@
                             </div>
                             <center><input th:id="'txtbarcode'+${status.index}" type="text" th:value="${user.id}"/>
                             </center>
+                            <!--To Print in A4-->
                             <div class="modal-body" th:id="'barcodeprint'+${status.index}"
-                                 style="margin-left:65px; margin-top:-8px; position:relative;">
-                                <img th:src="@{/image/background.jpg}" alt="image not found" width="350px"
-                                     height="450px"/>
-                                <div id="details" style="position:absolute;bottom: 18px;left: 18px;">
-                                    <h5>Email: <span th:text="${user.email}" style="color: red" id="emaill"></span></h5>
-                                    <h5>Organization: <span th:text="${user.organization}"></span></h5>
-                                    <h5>Designation: <span th:text="${user.designation}"></span></h5>
-                                    <h5>Number: <span th:text="${user.number}"></span></h5>
+                                 style="margin-left:107px; margin-top:-8px; position:relative;">
+                                <img th:src="@{/image/background.jpg}" alt="image not found" width="357px"
+                                     height="490px"/>
+                                <div id="details" style="position:absolute;bottom: 18px;left:14px;">
+                                    <!--<h5>Email: <span th:text="${user.email}" style="color: red" id="emaill"></span></h5>-->
+
+                                    <div class="panel panel-default">
+                                        <div id="designation" style="width: 357px;height: 45px;text-align: center; background: orangered;"
+                                             class=" panel-heading">
+                                            <span id="spanTest" th:text="${user.designation}"></span>
+                                        </div>
+                                        <!--<div class="panel-body">Panel Content</div>-->
+                                    </div>
+                                    <div style="margin-left: 25px;font-size: 20px;font-family: 'Lato Black'">
+                                        <span th:text="${user.firstName}"></span>
+                                        <span th:text="${user.lastName}"></span>
+                                    </div>
+                                    <span style="text-align: center">Please wear this ID all the time.</span>
+                                    <p style="text-align: center">Additional Charges in case of loss.</p>
 
                                 </div>
-                                <div th:id="'barcodes'+${status.index}"
-                                     style="position: absolute; bottom:40px; left:200px;"></div>
 
+                                <div th:id="'barcodes'+${status.index}"
+                                     style="position: absolute; bottom:43px; left:279px;">
+                                </div>
 
                             </div>
+
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                                 <a class="btn btn-info" data-dismiss="modal" th:id="'print'+${status.index}" href="#"

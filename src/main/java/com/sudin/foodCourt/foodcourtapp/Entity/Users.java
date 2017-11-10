@@ -23,17 +23,11 @@ public class Users {
     @Column(name = "LastName")
     private String lastName;
 
-    @Column(name = "Email")
-    private String email;
-
-    @Column(name = "Organization")
-    private String organization;
 
     @Column(name = "Designation")
     private String designation;
 
-    @Column(name = "Number")
-    private String number;
+
 
     @JsonIgnore
     @CreationTimestamp
@@ -91,21 +85,6 @@ public class Users {
         this.lastName = lastName;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getOrganization() {
-        return organization;
-    }
-
-    public void setOrganization(String organization) {
-        this.organization = organization;
-    }
 
     public String getDesignation() {
         return designation;
@@ -115,13 +94,6 @@ public class Users {
         this.designation = designation;
     }
 
-    public String getNumber() {
-        return number;
-    }
-
-    public void setNumber(String number) {
-        this.number = number;
-    }
 
     public Date getCreatedDate() {
         return createdDate;
