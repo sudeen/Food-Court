@@ -47,10 +47,10 @@ public class EntryController {
 
                 Entry entry = new Entry(user);
                 entryRepository.save(entry);
-                success = "Entry of " +user.getFirstName()+ " " +user.getLastName()+" successful";
+                success = "Entry of " +user.getName()+ " successful";
                 redirectAttributes.addFlashAttribute("success", success);
             } else {
-                error = "Entry of " +user.getFirstName()+ " " +user.getLastName()+" already done";
+                error = "Entry of " +user.getName()+ " already done";
                 redirectAttributes.addFlashAttribute("error", error);
             }
         } else {
@@ -81,14 +81,14 @@ public class EntryController {
                 if (entry != null) {
                     Lunch lunch = new Lunch(user);
                     lunchRepository.save(lunch);
-                    success = "Lunch of " +user.getFirstName()+ " " +user.getLastName()+" successful";
+                    success = "Lunch of " +user.getName()+" successful";
                     redirectAttributes.addFlashAttribute("success", success);
                 } else {
                     System.out.println("entry not completed");
-                    redirectAttributes.addFlashAttribute("error", "Entry of " +user.getFirstName()+ " " +user.getLastName()+ " not done yet");
+                    redirectAttributes.addFlashAttribute("error", "Entry of " +user.getName()+ " not done yet");
                 }
             } else {
-                error = user.getFirstName()+ " " +user.getLastName()+ "has already taken Lunch";
+                error = user.getName()+ "has already taken Lunch";
                 redirectAttributes.addFlashAttribute("error", error);
             }
         } else {
@@ -118,13 +118,13 @@ public class EntryController {
                 if (entry != null) {
                     Dinner dinner = new Dinner(user);
                     dinnerRepository.save(dinner);
-                    success = "Dinner of " +user.getFirstName()+ " " +user.getLastName()+" successful";
+                    success = "Dinner of " +user.getName()+" successful";
                     redirectAttributes.addFlashAttribute("success", success);
                 } else {
-                    redirectAttributes.addFlashAttribute("error", "Entry of " +user.getFirstName()+ " " +user.getLastName()+ " not done yet");
+                    redirectAttributes.addFlashAttribute("error", "Entry of " +user.getName()+ " not done yet");
                 }
             } else {
-                error = user.getFirstName()+ " " +user.getLastName()+ " has already taken Dinner";
+                error = user.getName()+ " has already taken Dinner";
                 redirectAttributes.addFlashAttribute("error", error);
             }
         } else {

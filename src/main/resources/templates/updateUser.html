@@ -19,36 +19,14 @@
 
                 <!-- First Name -->
                 <div class="form-group">
-                    <label class="col-md-2 control-label" for="firstName">* First Name</label>
+                    <label class="col-md-2 control-label" for="name">* Name</label>
 
                     <div class="col-md-8">
-                        <input type="text" name="firstName" class="form-control" id="firstName"
-                              th:value="${user.firstName}" required="required" placeholder="FirstName"/>
+                        <input type="text" name="name" class="form-control" id="name"
+                              th:value="${user.name}" required="required" placeholder="Name"/>
                         <span class="help-block">First Name</span>
                     </div>
                 </div>
-
-                <!-- MiddleName -->
-                <div class="form-group">
-                    <label class="col-md-2 control-label" for="middleName">Middle Name</label>
-                    <div class="col-md-8">
-                        <input type="text" name="middleName" class="form-control" id="middleName"
-                               th:value="${user.middleName}"
-                               placeholder="Middle Name"/> <span class="help-block">Middle Name</span>
-                    </div>
-                </div>
-
-                <!-- LastName -->
-                <div class="form-group">
-                    <label class="col-md-2 control-label" for="lastName">* Last Name</label>
-                    <div class="col-md-8">
-                        <input type="text" name="lastName" class="form-control"
-                               id="lastName" required="required"
-                               th:value="${user.lastName}"
-                               placeholder="Last Name"/> <span class="help-block">Last Name</span>
-                    </div>
-                </div>
-
 
                 <!-- Designation -->
                 <div class="form-group">

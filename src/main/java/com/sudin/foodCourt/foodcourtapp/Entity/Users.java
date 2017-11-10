@@ -14,14 +14,8 @@ public class Users {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(name = "FirstName")
-    private String firstName;
-
-    @Column(name = "MiddleName")
-    private String middleName;
-
-    @Column(name = "LastName")
-    private String lastName;
+    @Column(name = "Name")
+    private String name;
 
 
     @Column(name = "Designation")
@@ -61,30 +55,13 @@ public class Users {
         this.id = id;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getName() {
+        return name;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setName(String name) {
+        this.name = name;
     }
-
-    public String getMiddleName() {
-        return middleName;
-    }
-
-    public void setMiddleName(String middleName) {
-        this.middleName = middleName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
 
     public String getDesignation() {
         return designation;

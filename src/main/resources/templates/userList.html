@@ -46,13 +46,24 @@
 
     <style>
         @media print {
-            #designation{
-                color:orangered !important;
+
+            .panel-heading, .custom-heading {
+                background-color: orangered;
+                color: white;
+                padding: 0;
+                -webkit-print-color-adjust: exact;
 
             }
-        }
 
-        img {
+            #designation {
+                background-color: orangered !important;
+                color: white;
+                -webkit-print-color-adjust: exact;
+            }
+
+            .panel {
+                margin-bottom: 0;
+            }
 
         }
 
@@ -61,11 +72,30 @@
             text-align: center;
             vertical-align: middle;
             line-height: 23px;
+            font-weight: 500;
         }
 
         #details {
             color: black;
         }
+
+        #designation {
+            background-color: orangered !important;
+        }
+
+        .inner-model {
+            width: auto;
+        }
+
+        .panel-heading, .custom-heading {
+            border-radius: 0;
+            padding: 0;
+        }
+
+        .panel {
+            margin-bottom: 0;
+        }
+
     </style>
 </head>
 
@@ -79,9 +109,7 @@
             <thead>
             <tr>
                 <th><input th:id="selectAllUsers" type="checkbox"/></th>
-                <th>First Name</th>
-                <th>Middle Name</th>
-                <th>Last Name</th>
+                <th>Name</th>
                 <th>Designation</th>
                 <th>Operation</th>
             </tr>
@@ -94,11 +122,9 @@
                 </td>
                 <td>
                     <a
-                            th:text="${user.firstName}">
+                            th:text="${user.name}">
                     </a>
                 </td>
-                <td th:text="${user.middleName}"></td>
-                <td th:text="${user.lastName}"></td>
                 <td th:text="${user.designation}"></td>
                 <td>
                     <input hidden="hidden" name="id" th:value="${user.id}"/>
@@ -107,10 +133,6 @@
                             type="submit" value="delete">
                         <span class="fa fa-times">Delete</span>
                     </button>
-                    <!--<a th:id="'oneUser-'+${user.id}" data-toggle="modal" data-target="#myModal"-->
-                    <!--class="btn btn-primary btn-xs" type="submit" value="generateBarcode">-->
-                    <!--<span class="fa fa-barcode"> Generate Barcode</span>-->
-                    <!--</a>-->
                     <a class="btn btn-success btn-xs" th:href="@{/updateUser?id=}+${user.id}"><span class="fa fa-edit">Edit</span></a>
                     <br/>
                     <a th:href="'#'+${status.index}" class="btn btn-primary btn-xs" data-toggle="modal"
@@ -129,31 +151,32 @@
                             <!--To Print in A4-->
                             <div class="modal-body" th:id="'barcodeprint'+${status.index}"
                                  style="margin-left:107px; margin-top:-8px; position:relative;">
-                                <img th:src="@{/image/background.jpg}" alt="image not found" width="357px"
-                                     height="490px"/>
-                                <div id="details" style="position:absolute;bottom: 18px;left:14px;">
-                                    <!--<h5>Email: <span th:text="${user.email}" style="color: red" id="emaill"></span></h5>-->
-
-                                    <div class="panel panel-default">
-                                        <div id="designation" style="width: 357px;height: 45px;text-align: center; background: orangered;"
-                                             class=" panel-heading">
-                                            <span id="spanTest" th:text="${user.designation}"></span>
+                                <div class="inner-model">
+                                    <img th:src="@{/image/background.jpg}" alt="image not found" width="360px"
+                                         height="500px"/>
+                                    <div id="details" style="position:absolute;bottom: 30px;width:360px;">
+                                        <div class="panel" th:id="designation">
+                                            <div class="panel-heading custom-heading">
+                                                <h5 style="text-align: center">
+                                                    <span id="spanTest"
+                                                          th:text="${user.designation}"></span>
+                                                </h5>
+                                            </div>
+                                            <!--<div class="panel-body">Panel Content</div>-->
                                         </div>
-                                        <!--<div class="panel-body">Panel Content</div>-->
+                                        <div class="panel-body">
+                                            <div style="font-size: 20px;font-family: 'Lato Black'">
+                                                <span th:text="${user.name}"></span>
+                                            </div>
+                                            <strong><em><span>Please wear this ID all the time.</span></em></strong>
+                                            <strong><em><p>Additional Charges in case of loss.</p></em></strong>
+                                        </div>
+
                                     </div>
-                                    <div style="margin-left: 25px;font-size: 20px;font-family: 'Lato Black'">
-                                        <span th:text="${user.firstName}"></span>
-                                        <span th:text="${user.lastName}"></span>
+                                    <div th:id="'barcodes'+${status.index}"
+                                         style="position: absolute; bottom:43px; left:279px;">
                                     </div>
-                                    <span style="text-align: center">Please wear this ID all the time.</span>
-                                    <p style="text-align: center">Additional Charges in case of loss.</p>
-
                                 </div>
-
-                                <div th:id="'barcodes'+${status.index}"
-                                     style="position: absolute; bottom:43px; left:279px;">
-                                </div>
-
                             </div>
 
                             <div class="modal-footer">
