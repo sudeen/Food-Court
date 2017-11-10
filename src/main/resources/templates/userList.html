@@ -55,8 +55,52 @@
 
             }
 
+
+
             #designation {
                 background-color: orangered !important;
+                color: white;
+                -webkit-print-color-adjust: exact;
+            }
+
+            #Delegate {
+                background-color: blue !important;
+                color: white;
+                -webkit-print-color-adjust: exact;
+            }
+
+            #Speaker {
+                background-color: orangered !important;
+                color: white;
+                -webkit-print-color-adjust: exact;
+            }
+
+            #Organizer {
+                background-color: Green !important;
+                color: white;
+                -webkit-print-color-adjust: exact;
+            }
+
+            #It {
+                background-color: yellow !important;
+                color: white;
+                -webkit-print-color-adjust: exact;
+            }
+
+            #Trade {
+                background-color: red !important;
+                color: white;
+                -webkit-print-color-adjust: exact;
+            }
+
+            #Guest {
+                background-color: hotpink !important;
+                color: white;
+                -webkit-print-color-adjust: exact;
+            }
+
+            #Other {
+                background-color: darkcyan !important;
                 color: white;
                 -webkit-print-color-adjust: exact;
             }
@@ -75,12 +119,91 @@
             font-weight: 500;
         }
 
+        #spanTest1 {
+            font-size: 31px;
+            text-align: center;
+            vertical-align: middle;
+            line-height: 23px;
+            font-weight: 500;
+        }
+
+
+        #spanTest2 {
+            font-size: 31px;
+            text-align: center;
+            vertical-align: middle;
+            line-height: 23px;
+            font-weight: 500;
+        }
+        #spanTest3 {
+            font-size: 31px;
+            text-align: center;
+            vertical-align: middle;
+            line-height: 23px;
+            font-weight: 500;
+        }
+        #spanTest4 {
+            font-size: 31px;
+            text-align: center;
+            vertical-align: middle;
+            line-height: 23px;
+            font-weight: 500;
+        }
+        #spanTest5 {
+            font-size: 31px;
+            text-align: center;
+            vertical-align: middle;
+            line-height: 23px;
+            font-weight: 500;
+        }
+        #spanTest6 {
+            font-size: 31px;
+            text-align: center;
+            vertical-align: middle;
+            line-height: 23px;
+            font-weight: 500;
+        }
+        #spanTest7 {
+            font-size: 31px;
+            text-align: center;
+            vertical-align: middle;
+            line-height: 23px;
+            font-weight: 500;
+        }
+
         #details {
             color: black;
         }
 
-        #designation {
+        #Student {
             background-color: orangered !important;
+        }
+
+        #Delegate{
+            background-color: blue !important;
+        }
+
+        #Speaker {
+            background-color: orangered !important;
+        }
+
+        #Organizer {
+            background-color: green !important;
+        }
+        #It {
+            background-color: yellow !important;
+        }
+
+        #Trade {
+            background-color: red !important;
+        }
+
+        #Guest {
+            background-color: hotpink !important;
+        }
+
+        #Other {
+            background-color: darkcyan !important;
         }
 
         .inner-model {
@@ -155,26 +278,91 @@
                                     <img th:src="@{/image/background.jpg}" alt="image not found" width="360px"
                                          height="500px"/>
                                     <div id="details" style="position:absolute;bottom: 30px;width:360px;">
-                                        <div class="panel" th:id="designation">
+
+                                        <div th:if="${user.designation}=='Student'" class="panel" id="Student">
                                             <div class="panel-heading custom-heading">
                                                 <h5 style="text-align: center">
-                                                    <span id="spanTest"
-                                                          th:text="${user.designation}"></span>
+                                                    <span id="spanTest" th:text="${user.designation}"></span>
                                                 </h5>
                                             </div>
                                             <!--<div class="panel-body">Panel Content</div>-->
                                         </div>
+                                        <div th:if="${user.designation}=='Delegate'" class="panel" id="Delegate">
+                                            <div class="panel-heading custom-heading">
+                                                <h5 style="text-align: center">
+                                                    <span id="spanTest1" th:text="${user.designation}"></span>
+                                                </h5>
+                                            </div>
+                                        </div>
+                                        <!--Organizer-->
+                                        <div th:if="${user.designation}=='Organizer'" class="panel" id="Organizer">
+                                            <div class="panel-heading custom-heading">
+                                                <h5 style="text-align: center">
+                                                    <span id="spanTest2" th:text="${user.designation}"></span>
+                                                </h5>
+                                            </div>
+                                        </div>
+                                        <!--Speaker-->
+                                        <div th:if="${user.designation}=='Speaker'" class="panel" id="Speaker">
+                                            <div class="panel-heading custom-heading">
+                                                <h5 style="text-align: center">
+                                                    <span id="spanTest3" th:text="${user.designation}"></span>
+                                                </h5>
+                                            </div>
+                                        </div>
+                                        <!--It-->
+                                        <div th:if="${user.designation}=='IT'" class="panel" id="It">
+                                            <div class="panel-heading custom-heading">
+                                                <h5 style="text-align: center">
+                                                    <span id="spanTest4" th:text="${user.designation}"></span>
+                                                </h5>
+                                            </div>
+                                        </div>
+                                        <!--Trade-->
+                                        <div th:if="${user.designation}=='Trade'" class="panel" id="Trade">
+                                            <div class="panel-heading custom-heading">
+                                                <h5 style="text-align: center">
+                                                    <span id="spanTest5" th:text="${user.designation}"></span>
+                                                </h5>
+                                            </div>
+                                        </div>
+                                        <!--Guest-->
+                                        <div th:if="${user.designation}=='Guest'" class="panel" id="Guest">
+                                            <div class="panel-heading custom-heading">
+                                                <h5 style="text-align: center">
+                                                    <span id="spanTest6" th:text="${user.designation}"></span>
+                                                </h5>
+                                            </div>
+                                        </div>
+                                        <!--Other-->
+                                        <div th:if="${user.designation}=='Other'" class="panel" id="Other">
+                                            <div class="panel-heading custom-heading">
+                                                <h5 style="text-align: center">
+                                                    <span id="spanTest7" th:text="${user.designation}"></span>
+                                                </h5>
+                                            </div>
+                                        </div>
+
                                         <div class="panel-body">
                                             <div style="font-size: 20px;font-family: 'Lato Black'">
                                                 <span th:text="${user.name}"></span>
                                             </div>
-                                            <strong><em><span>Please wear this ID all the time.</span></em></strong>
-                                            <strong><em><p>Additional Charges in case of loss.</p></em></strong>
+                                            <!--<strong><em><span>Please wear this ID all the time.</span></em></strong>-->
+                                            <!--<strong><em><p>Additional Charges in case of loss.</p></em></strong>-->
+                                        </div>
+
+                                        <div class="panel-footer">
+                                            <strong><em><p style="font-size: 8px">Please wear this ID all the time.
+                                                Used for Entry, Lunch and Dinner.
+                                                Additional Charges in case of loss.
+                                            </p></em></strong>
+                                            <!--<strong><em><p style="font-size: 8px">Used for Entry, Lunch and Dinner</p></em></strong>-->
+                                            <!--<strong><em><p style="font-size: 8px">Additional Charges in case of loss.</p></em></strong>-->
                                         </div>
 
                                     </div>
                                     <div th:id="'barcodes'+${status.index}"
-                                         style="position: absolute; bottom:43px; left:279px;">
+                                         style="position: absolute; bottom:75px; left:279px;">
                                     </div>
                                 </div>
                             </div>
