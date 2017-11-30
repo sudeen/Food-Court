@@ -21,18 +21,6 @@
 
     <link rel="icon" href="#"/>
 
-    <!--<script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>-->
-    <!--<script>tinymce.init({ selector:'textarea' });</script>-->
-
-    <script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=wdartupm1s7vgujdpodqsy71fa0qvl0mlp33h2der8o5lyz1"></script>
-    <script>
-        tinymce.init({
-            selector: 'textarea',
-            height: 500,
-            theme: 'modern',
-            plugins: 'lists advlist image imagetools'
-        });
-    </script>
 
     <!--Data table content-->
     <link th:href="@{/css/jquery.dataTables.min.css}" rel="stylesheet"/>
@@ -300,6 +288,9 @@
                                             </div>
                                             <!--<div class="panel-body">Panel Content</div>-->
                                         </div>
+                                        <!--/*@thymesVar id="user" type="aj"*/-->
+                                        <!--/*@thymesVar id="designation" type="aj"*/-->
+                                        <!--/*@thymesVar id="designation" type="aj"*/-->
                                         <div th:if="${user.designation}=='DELEGATE'" class="panel" id="Delegate">
                                             <div class="panel-heading custom-heading">
                                                 <h5 style="text-align: center">
@@ -360,8 +351,6 @@
                                             <div style="font-size: 20px;font-family: 'Lato Black'">
                                                 <span th:text="${user.name}"></span>
                                             </div>
-                                            <!--<strong><em><span>Please wear this ID all the time.</span></em></strong>-->
-                                            <!--<strong><em><p>Additional Charges in case of loss.</p></em></strong>-->
                                         </div>
 
                                         <div class="panel-footer">
@@ -369,8 +358,6 @@
                                                 Used for Entry, Lunch and Dinner.
                                                 Additional Charges in case of loss.
                                             </p></em></strong>
-                                            <!--<strong><em><p style="font-size: 8px">Used for Entry, Lunch and Dinner</p></em></strong>-->
-                                            <!--<strong><em><p style="font-size: 8px">Additional Charges in case of loss.</p></em></strong>-->
                                         </div>
 
                                     </div>

@@ -18,6 +18,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 public class EntryController {
+
     @Autowired
     private UserRepository userRepository;
 
