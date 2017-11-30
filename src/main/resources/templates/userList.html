@@ -64,45 +64,58 @@
             }
 
             #Delegate {
-                background-color: blue !important;
+                background-color: lightblue !important;
                 color: white;
                 -webkit-print-color-adjust: exact;
+                font-weight: bold;
             }
 
             #Speaker {
                 background-color: orangered !important;
                 color: white;
                 -webkit-print-color-adjust: exact;
+                font-weight: bold;
+
             }
 
             #Organizer {
                 background-color: Green !important;
                 color: white;
                 -webkit-print-color-adjust: exact;
+                font-weight: bold;
+
             }
 
             #It {
                 background-color: yellow !important;
                 color: white;
                 -webkit-print-color-adjust: exact;
+                font-weight: bold;
+
             }
 
             #Trade {
-                background-color: red !important;
+                background-color: lightcoral !important;
                 color: white;
                 -webkit-print-color-adjust: exact;
+                font-weight: bold;
+
             }
 
             #Guest {
                 background-color: hotpink !important;
                 color: white;
                 -webkit-print-color-adjust: exact;
+                font-weight: bold;
+
             }
 
             #Other {
                 background-color: darkcyan !important;
                 color: white;
                 -webkit-print-color-adjust: exact;
+                font-weight: bold;
+
             }
 
             .panel {
@@ -116,7 +129,7 @@
             text-align: center;
             vertical-align: middle;
             line-height: 23px;
-            font-weight: 500;
+            font-weight: bolder !important;
         }
 
         #spanTest1 {
@@ -124,7 +137,7 @@
             text-align: center;
             vertical-align: middle;
             line-height: 23px;
-            font-weight: 500;
+            font-weight: bolder !important;
         }
 
 
@@ -133,42 +146,42 @@
             text-align: center;
             vertical-align: middle;
             line-height: 23px;
-            font-weight: 500;
+            font-weight: bolder !important;
         }
         #spanTest3 {
             font-size: 31px;
             text-align: center;
             vertical-align: middle;
             line-height: 23px;
-            font-weight: 500;
+            font-weight: bolder !important;
         }
         #spanTest4 {
             font-size: 31px;
             text-align: center;
             vertical-align: middle;
             line-height: 23px;
-            font-weight: 500;
+            font-weight: bolder !important;
         }
         #spanTest5 {
             font-size: 31px;
             text-align: center;
             vertical-align: middle;
             line-height: 23px;
-            font-weight: 500;
+            font-weight: bolder !important;
         }
         #spanTest6 {
             font-size: 31px;
             text-align: center;
             vertical-align: middle;
             line-height: 23px;
-            font-weight: 500;
+            font-weight: bolder !important;
         }
         #spanTest7 {
             font-size: 31px;
             text-align: center;
             vertical-align: middle;
             line-height: 23px;
-            font-weight: 500;
+            font-weight: bolder !important;
         }
 
         #details {
@@ -176,26 +189,26 @@
         }
 
         #Student {
-            background-color: orangered !important;
+            background-color: lightblue !important;
         }
 
         #Delegate{
-            background-color: blue !important;
+            background-color: lightblue !important;
         }
 
         #Speaker {
-            background-color: orangered !important;
+            background-color: gold !important;
         }
 
         #Organizer {
-            background-color: green !important;
+            background-color: lightgreen !important;
         }
         #It {
             background-color: yellow !important;
         }
 
         #Trade {
-            background-color: red !important;
+            background-color: lightcoral !important;
         }
 
         #Guest {
@@ -275,11 +288,11 @@
                             <div class="modal-body" th:id="'barcodeprint'+${status.index}"
                                  style="margin-left:107px; margin-top:-8px; position:relative;">
                                 <div class="inner-model">
-                                    <img th:src="@{/image/background.jpg}" alt="image not found" width="360px"
-                                         height="500px"/>
+                                    <img th:src="@{/image/background.jpg}" alt="image not found" width="353px"
+                                         height="488px"/>
                                     <div id="details" style="position:absolute;bottom: 30px;width:360px;">
 
-                                        <div th:if="${user.designation}=='Student'" class="panel" id="Student">
+                                        <div th:if="${user.designation}=='STUDENT'" class="panel" id="Student">
                                             <div class="panel-heading custom-heading">
                                                 <h5 style="text-align: center">
                                                     <span id="spanTest" th:text="${user.designation}"></span>
@@ -287,7 +300,7 @@
                                             </div>
                                             <!--<div class="panel-body">Panel Content</div>-->
                                         </div>
-                                        <div th:if="${user.designation}=='Delegate'" class="panel" id="Delegate">
+                                        <div th:if="${user.designation}=='DELEGATE'" class="panel" id="Delegate">
                                             <div class="panel-heading custom-heading">
                                                 <h5 style="text-align: center">
                                                     <span id="spanTest1" th:text="${user.designation}"></span>
@@ -295,7 +308,7 @@
                                             </div>
                                         </div>
                                         <!--Organizer-->
-                                        <div th:if="${user.designation}=='Organizer'" class="panel" id="Organizer">
+                                        <div th:if="${user.designation}=='ORGANIZER'" class="panel" id="Organizer">
                                             <div class="panel-heading custom-heading">
                                                 <h5 style="text-align: center">
                                                     <span id="spanTest2" th:text="${user.designation}"></span>
@@ -303,7 +316,7 @@
                                             </div>
                                         </div>
                                         <!--Speaker-->
-                                        <div th:if="${user.designation}=='Speaker'" class="panel" id="Speaker">
+                                        <div th:if="${user.designation}=='SPEAKER'" class="panel" id="Speaker">
                                             <div class="panel-heading custom-heading">
                                                 <h5 style="text-align: center">
                                                     <span id="spanTest3" th:text="${user.designation}"></span>
@@ -319,7 +332,7 @@
                                             </div>
                                         </div>
                                         <!--Trade-->
-                                        <div th:if="${user.designation}=='Trade'" class="panel" id="Trade">
+                                        <div th:if="${user.designation}=='TRADE'" class="panel" id="Trade">
                                             <div class="panel-heading custom-heading">
                                                 <h5 style="text-align: center">
                                                     <span id="spanTest5" th:text="${user.designation}"></span>
@@ -327,7 +340,7 @@
                                             </div>
                                         </div>
                                         <!--Guest-->
-                                        <div th:if="${user.designation}=='Guest'" class="panel" id="Guest">
+                                        <div th:if="${user.designation}=='GUEST'" class="panel" id="Guest">
                                             <div class="panel-heading custom-heading">
                                                 <h5 style="text-align: center">
                                                     <span id="spanTest6" th:text="${user.designation}"></span>
@@ -335,7 +348,7 @@
                                             </div>
                                         </div>
                                         <!--Other-->
-                                        <div th:if="${user.designation}=='Other'" class="panel" id="Other">
+                                        <div th:if="${user.designation}=='OTHER'" class="panel" id="Other">
                                             <div class="panel-heading custom-heading">
                                                 <h5 style="text-align: center">
                                                     <span id="spanTest7" th:text="${user.designation}"></span>
